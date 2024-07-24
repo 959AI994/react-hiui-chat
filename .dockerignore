@@ -1,0 +1,18 @@
+# Git files
+# .git
+.gitlab
+.gitignore
+.gitlab-ci.yml
+
+# Docs files
+LICENSE
+README.md
+CHANGELOG.md
+
+# Mixed config files
+.editorconfig
+.eslintrc.js
+.stylelintrc.js
+.commitlintrc.js
+sonar-project.properties
+tag.sh

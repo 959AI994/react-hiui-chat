@@ -1,0 +1,22 @@
+variables:
+  # https://git.n.xiaomi.com/mit/fe/fe-deploy-neo-action/-/blob/master/CHANGELOG.md
+  CI_FE_VERSION: v1.2.1
+  # 自定义 node env 多个用英文逗号隔开
+  CI_NODE_ENV: CI_COMMIT_TAG=$CI_COMMIT_TAG
+  # node 镜像列表：https://cloud.mioffice.cn/next/console/micr/iam/common/project/node-images/repository/bm9kZQ==/detail?projectId=10615
+  CI_NODE_DOCKER_IMAGE: micr.cloud.mioffice.cn/node-images/node:16-buster-slim
+
+include:
+  - project: mit/infra/ci-templates
+    ref: master
+    file: ts/ts.gitlab-ci.yml
+  - project: mit/fe/quality-scripts
+    ref: master
+    file: ci/js/standard-compute.gitlab-ci.yml
+
+stages:
+  - scan
+  - lint
+  - build
+  - test
+  - deploy
