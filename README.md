@@ -35,7 +35,3 @@ bash ./tag.sh [$DEPLOY_ENV-] # test- pre- pro-
 ```
 
 ### Visualize size of webpack output files with an interactive zoomable treemap
-
-```sh
-npm run analyze
-```
